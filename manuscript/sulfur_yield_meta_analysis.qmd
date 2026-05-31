@@ -1,0 +1,87 @@
+---
+title: "Yield response to sulfur fertilizer and sulfur-based nutrient co-application in crop production"
+subtitle: "A systematic review and meta-analysis"
+format:
+  html:
+    toc: true
+    number-sections: true
+execute:
+  echo: false
+  warning: false
+  message: false
+---
+
+```{r}
+if (basename(getwd()) == "manuscript") {
+  setwd("..")
+}
+source("analysis/run_pipeline.R")
+effects <- readr::read_csv("data/processed/effect_sizes.csv", show_col_types = FALSE)
+overall <- readr::read_csv("data/processed/overall.csv", show_col_types = FALSE)
+```
+
+# Abstract
+
+## Background
+
+Sulfur deficiency can limit crop production, yet sulfur is frequently applied with other nutrients. This study estimates yield responses to sulfur fertilization while separating sulfur-only effects from sulfur co-application effects.
+
+## Methods
+
+We extracted treatment-control contrasts from agronomic experiments and prioritized comparisons where sulfur was the only difference between treatment and control. The primary effect size was the log response ratio of crop yield.
+
+## Results
+
+The current repository includes a synthetic demonstration dataset. Replace it with extracted studies before interpreting results.
+
+## Conclusions
+
+Background-matched contrasts provide a more defensible estimate of sulfur fertilizer effects than broad fertilizer-package comparisons.
+
+# Introduction
+
+Sulfur is essential for amino acid synthesis, protein formation, enzyme activity, and crop quality. Modern fertilization systems may create sulfur limitations through higher crop nutrient removal and reduced incidental sulfur inputs. However, agronomic sulfur trials often combine sulfur with other nutrients, making it difficult to isolate the sulfur contribution.
+
+# Methods
+
+## Eligibility criteria
+
+See `protocol/protocol.md` and `docs/screening_rules.md`.
+
+## Effect size
+
+The primary effect size was:
+
+```text
+lnRR = log(mean yield with S / mean yield without S)
+```
+
+## Statistical analysis
+
+Random-effects and multilevel meta-analytic models were fitted using `metafor`.
+
+# Results
+
+```{r}
+knitr::kable(overall, digits = 3)
+```
+
+```{r}
+knitr::include_graphics("figures/yield_gain_by_role.png")
+```
+
+```{r}
+knitr::include_graphics("figures/dose_response.png")
+```
+
+```{r}
+knitr::include_graphics("figures/soil_s_gradient.png")
+```
+
+# Discussion
+
+The final discussion should interpret sulfur response by crop sulfur demand, soil sulfur status, source, rate, and co-applied nutrient background.
+
+# Reproducibility
+
+All code, templates, and synthetic demo data are available in this repository.

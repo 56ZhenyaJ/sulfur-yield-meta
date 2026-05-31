@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "Sulfur Yield Meta: Reproducible meta-analysis toolkit for sulfur fertilizer yield effects"
+authors:
+  - family-names: "ZhenyaJ"
+    given-names: "56"
+date-released: 2026-05-31
+version: 0.1.0
+license: MIT
+keywords:
+  - sulfur fertilizer
+  - sulphur fertilizer
+  - crop yield
+  - agronomy
+  - meta-analysis
+  - nutrient interaction
+repository-code: "https://github.com/56ZhenyaJ/sulfur-yield-meta"
+

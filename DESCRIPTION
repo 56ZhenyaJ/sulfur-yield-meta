@@ -1,0 +1,20 @@
+Package: sulfurYieldMeta
+Type: Project
+Title: Sulfur Fertilizer Yield Meta-Analysis Toolkit
+Version: 0.1.0
+Authors@R: person("56", "ZhenyaJ", role = c("aut", "cre"))
+Description: Reproducible R workflow for agronomic meta-analysis of sulfur fertilizer effects on crop yield, including sulfur-only and sulfur co-application contrasts.
+License: MIT
+Encoding: UTF-8
+Imports:
+    broom,
+    clubSandwich,
+    dplyr,
+    ggplot2,
+    metafor,
+    purrr,
+    readr,
+    stringr,
+    tibble,
+    tidyr
+

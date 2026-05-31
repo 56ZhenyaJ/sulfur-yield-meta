@@ -1,0 +1,46 @@
+field,type,required,description,preferred_units
+study_id,string,yes,Unique study identifier,NA
+experiment_id,string,yes,Unique experiment/site/year identifier nested in study,NA
+citation_key,string,yes,Short citation key such as smith_2024,NA
+year,integer,yes,Publication year or experiment year if publication year is unavailable,year
+country,string,no,Country where the field or pot experiment was conducted,NA
+region,string,no,Province state or agroecological region,NA
+latitude,numeric,no,Latitude of site,decimal degrees
+longitude,numeric,no,Longitude of site,decimal degrees
+crop_group,string,yes,Crop group such as cereal oilseed legume vegetable forage fruit,categorical
+crop_species,string,yes,Crop species common name or Latin name,NA
+cultivar,string,no,Cultivar if reported,NA
+cropping_system,string,no,Field pot greenhouse rotation or intercropping system,NA
+soil_texture,string,no,Soil texture class,NA
+soil_ph,numeric,no,Soil pH,unitless
+soil_organic_matter_g_kg,numeric,no,Soil organic matter,g/kg
+soil_available_s_mg_kg,numeric,no,Available sulfur before treatment,mg/kg
+baseline_yield_t_ha,numeric,no,Control or site baseline yield,t/ha
+treatment_id,string,yes,Unique treatment identifier within experiment,NA
+treatment_label,string,yes,Original treatment label from paper,NA
+treatment_role,string,yes,s_only s_plus_n s_plus_p s_plus_k s_plus_npk s_plus_micro s_plus_organic package other,categorical
+comparison_frame,string,yes,s_vs_no_s_same_background s_only_vs_absolute_control package_vs_absolute_control other,categorical
+s_rate_kg_ha,numeric,yes,Sulfur application rate as elemental S,kg S/ha
+s_source,string,no,S source such as gypsum elemental_s ammonium_sulfate potassium_sulfate,NA
+s_application_method,string,no,Basal topdress foliar fertigation seed_coating,NA
+s_timing,string,no,Application timing,NA
+co_n_kg_ha,numeric,no,N co-application rate,kg N/ha
+co_p2o5_kg_ha,numeric,no,P co-application rate,kg P2O5/ha
+co_k2o_kg_ha,numeric,no,K co-application rate,kg K2O/ha
+co_mg_kg_ha,numeric,no,Mg co-application rate,kg Mg/ha
+co_zn_kg_ha,numeric,no,Zn co-application rate,kg Zn/ha
+co_b_kg_ha,numeric,no,B co-application rate,kg B/ha
+control_label,string,yes,Control treatment label used for the contrast,NA
+yield_t_ha,numeric,yes,Mean yield in sulfur treatment,t/ha
+yield_sd,numeric,no,Standard deviation of treatment yield,t/ha
+yield_se,numeric,no,Standard error of treatment yield,t/ha
+yield_n,integer,no,Replicate number for treatment,replicates
+control_yield_t_ha,numeric,yes,Mean yield in control,t/ha
+control_yield_sd,numeric,no,Standard deviation of control yield,t/ha
+control_yield_se,numeric,no,Standard error of control yield,t/ha
+control_n,integer,no,Replicate number for control,replicates
+design_type,string,no,Experimental design,NA
+risk_of_bias,string,no,low moderate high unclear,ordinal
+notes,string,no,Extraction notes,NA
+data_source,string,no,table figure text supplement,NA
+
