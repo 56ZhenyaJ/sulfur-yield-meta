@@ -10,18 +10,34 @@ fit_meta_model <- function(dat, mods = NULL) {
   }
 
   tryCatch(
-    metafor::rma.mv(
-      yi = yi,
-      V = vi,
-      mods = formula_mods,
-      random = ~ 1 | study_id / experiment_id,
-      method = "REML",
-      data = dat
-    ),
+    {
+      mv_args <- list(
+        yi = dat$yi,
+        V = dat$vi,
+        random = stats::as.formula("~ 1 | study_id / experiment_id"),
+        method = "REML",
+        data = dat
+      )
+      if (!is.null(formula_mods)) {
+        mv_args$mods <- formula_mods
+      }
+      do.call(metafor::rma.mv, mv_args)
+    },
     error = function(e) {
       message("rma.mv failed, falling back to rma.uni: ", conditionMessage(e))
       tryCatch(
-        metafor::rma.uni(yi = yi, vi = vi, mods = formula_mods, method = "REML", data = dat),
+        {
+          uni_args <- list(
+            yi = dat$yi,
+            vi = dat$vi,
+            method = "REML",
+            data = dat
+          )
+          if (!is.null(formula_mods)) {
+            uni_args$mods <- formula_mods
+          }
+          do.call(metafor::rma.uni, uni_args)
+        },
         error = function(e2) {
           message("rma.uni also failed: ", conditionMessage(e2))
           NULL
