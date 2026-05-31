@@ -1,5 +1,7 @@
 # Sulfur Yield Meta
 
+[![R pipeline](https://github.com/56ZhenyaJ/sulfur-yield-meta/actions/workflows/r-pipeline.yml/badge.svg)](https://github.com/56ZhenyaJ/sulfur-yield-meta/actions/workflows/r-pipeline.yml)
+
 Reproducible toolkit for an agronomic meta-analysis of sulfur fertilizer effects on crop yield, with special attention to sulfur applied alone and sulfur co-applied with nitrogen, phosphorus, potassium, magnesium, and micronutrients.
 
 ## Why this project is different
@@ -115,4 +117,3 @@ This keeps the estimate focused on the sulfur contribution.
 ## Citation
 
 If you use this repository, please cite it using the metadata in `CITATION.cff`.
-
