@@ -53,8 +53,10 @@ tidy_meta_coefficients <- function(model, label = "model") {
   }
 
   estimate_lnrr <- as.numeric(stats::coef(model))
+  model_se <- as.numeric(model$se)
   ci_lb_lnrr <- as.numeric(model$ci.lb)
   ci_ub_lnrr <- as.numeric(model$ci.ub)
+  model_pval <- as.numeric(model$pval)
 
   terms <- names(stats::coef(model))
   if (is.null(terms) || length(terms) == 0) {
@@ -65,10 +67,10 @@ tidy_meta_coefficients <- function(model, label = "model") {
     model = label,
     term = terms,
     estimate_lnrr = estimate_lnrr,
-    se = as.numeric(model$se),
+    se = model_se,
     ci_lb_lnrr = ci_lb_lnrr,
     ci_ub_lnrr = ci_ub_lnrr,
-    p_value = as.numeric(model$pval),
+    p_value = model_pval,
     estimate_percent = (exp(estimate_lnrr) - 1) * 100,
     ci_lb_percent = (exp(ci_lb_lnrr) - 1) * 100,
     ci_ub_percent = (exp(ci_ub_lnrr) - 1) * 100
